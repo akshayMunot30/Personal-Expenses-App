@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 import './transaction.dart';
 
@@ -25,13 +26,13 @@ class MyHomePage extends StatelessWidget {
     Transaction(
       id: 't1',
       title: 'New Earphones',
-      amount: 2000.0,
+      amount: 28.52,
       date: DateTime.now(),
     ),
     Transaction(
       id: 't2',
       title: 'Fuel',
-      amount: 300.0,
+      amount: 5.55,
       date: DateTime.now(),
     ),
   ];
@@ -66,17 +67,41 @@ class MyHomePage extends StatelessWidget {
                       ),
                       decoration: BoxDecoration(
                         border: Border.all(
-                          color: Colors.black,
+                          color: Colors.purple,
                           width: 2,
                         ),
                       ),
                       padding: EdgeInsets.all(10),
                       child: Text(
-                        tx.amount.toString(),
+                        '\$${tx.amount}',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                          color: Colors.purple,
+                        ),
                       ),
                     ),
                     Column(
-                      children: [Text(tx.title), Text(tx.date.toString())],
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          tx.title,
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                          ),
+                          textAlign: TextAlign.left,
+                        ),
+                        Text(
+                          DateFormat.yMMMMd().format(tx.date),
+                          textAlign: TextAlign.left,
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 12,
+                            color: Colors.grey,
+                          ),
+                        ),
+                      ],
                     )
                   ],
                 ),
