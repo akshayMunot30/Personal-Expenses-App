@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import './widgets/transaction_list.dart';
+import './widgets/user_transactions.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: MyHomePage(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
@@ -23,8 +24,7 @@ class MyHomePage extends StatelessWidget {
 
   // String titleInput = '';
   // String amountInput = '';
-  final titleController = TextEditingController();
-  final amountController = TextEditingController();
+  
 
   @override
   Widget build(BuildContext context) {
@@ -44,48 +44,7 @@ class MyHomePage extends StatelessWidget {
               elevation: 5,
             ),
           ),
-          Card(
-            elevation: 5,
-            child: Container(
-              padding: EdgeInsets.all(10),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  TextField(
-                    decoration: InputDecoration(
-                      labelText: 'Title',
-                    ),
-                    controller: titleController,
-                    // onChanged: (value) {
-                    //   titleInput = value;
-                    // },
-                  ),
-                  TextField(
-                    decoration: InputDecoration(
-                      labelText: 'Amount',
-                    ),
-                    controller: amountController,
-                    // onChanged: (value) {
-                    //   amountInput = value;
-                    // },
-                  ),
-                  TextButton(
-                    onPressed: () {
-                      print(titleController.text);
-                      print(amountController.text);
-                    },
-                    child: Text(
-                      'Add Transaction',
-                    ),
-                    style: TextButton.styleFrom(
-                      primary: Colors.purple,
-                    ),
-                  )
-                ],
-              ),
-            ),
-          ),
-          TransactionList(),
+          UserTransactions(),
         ],
       )
     );
