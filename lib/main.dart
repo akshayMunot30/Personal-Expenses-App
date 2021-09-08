@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import './widgets/new_transaction.dart';
 import './widgets/transaction_list.dart';
@@ -16,14 +17,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.purple,
         accentColor: Colors.amber,
-        fontFamily: 'OpenSans',
-        textTheme: ThemeData.light().textTheme.copyWith(
-              headline6: TextStyle(
-                fontFamily: 'Quicksand',
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
+        fontFamily: 'Quicksand',
+        textTheme: GoogleFonts.quicksandTextTheme(Theme.of(context).textTheme.copyWith(
+          headline6: GoogleFonts.openSans(textStyle: Theme.of(context).textTheme.headline6,
+          fontSize: 18,
+          fontWeight: FontWeight.bold)
+        ),),
         appBarTheme: AppBarTheme(
           textTheme: ThemeData.light().textTheme.copyWith(
                 headline6: TextStyle(
@@ -47,24 +46,24 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   final List<Transaction> _userTransactions = [
-    Transaction(
-      id: 't1',
-      title: 'New Earphones',
-      amount: 28.52,
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: 't2',
-      title: 'Fuel',
-      amount: 5.55,
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: 't3',
-      title: 'New Shirt',
-      amount: 20.32,
-      date: DateTime.now(),
-    ),
+    // Transaction(
+    //   id: 't1',
+    //   title: 'New Earphones',
+    //   amount: 28.52,
+    //   date: DateTime.now(),
+    // ),
+    // Transaction(
+    //   id: 't2',
+    //   title: 'Fuel',
+    //   amount: 5.55,
+    //   date: DateTime.now(),
+    // ),
+    // Transaction(
+    //   id: 't3',
+    //   title: 'May Shirt',
+    //   amount: 20.32,
+    //   date: DateTime.now(),
+    // ), 
   ];
 
   void _addNewTransaction(String txTitle, double txAmount) {
