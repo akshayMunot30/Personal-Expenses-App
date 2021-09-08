@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import './widgets/new_transaction.dart';
 import './widgets/transaction_list.dart';
+import './widgets/chart.dart';
 import './models/transaction.dart';
 
 void main() {
@@ -18,19 +19,23 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.purple,
         accentColor: Colors.amber,
         fontFamily: 'Quicksand',
-        textTheme: GoogleFonts.quicksandTextTheme(Theme.of(context).textTheme.copyWith(
-          headline6: GoogleFonts.openSans(textStyle: Theme.of(context).textTheme.headline6,
-          fontSize: 18,
-          fontWeight: FontWeight.bold)
-        ),),
-        appBarTheme: AppBarTheme(
-          textTheme: ThemeData.light().textTheme.copyWith(
-                headline6: TextStyle(
-                  fontFamily: 'OpenSans',
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
+        textTheme: GoogleFonts.quicksandTextTheme(
+          Theme.of(context).textTheme.copyWith(
+                headline6: GoogleFonts.openSans(
+                    textStyle: Theme.of(context).textTheme.headline6,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold),
               ),
+        ),
+        appBarTheme: AppBarTheme(
+          textTheme: GoogleFonts.quicksandTextTheme(
+            Theme.of(context).textTheme.copyWith(
+                  headline6: GoogleFonts.openSans(
+                      textStyle: Theme.of(context).textTheme.headline6,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold),
+                ),
+          ),
         ),
       ),
       home: MyHomePage(),
@@ -63,8 +68,14 @@ class _MyHomePageState extends State<MyHomePage> {
     //   title: 'May Shirt',
     //   amount: 20.32,
     //   date: DateTime.now(),
-    // ), 
+    // ),
   ];
+
+  List<Transaction> get _recentTransactions {
+    return _userTransactions.where((element) {
+      return element.date.isAfter(DateTime.now().subtract(Duration(days: 7)));
+    }).toList();
+  }
 
   void _addNewTransaction(String txTitle, double txAmount) {
     final newTx = Transaction(
@@ -107,14 +118,7 @@ class _MyHomePageState extends State<MyHomePage> {
           // mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Container(
-              width: double.infinity,
-              child: Card(
-                color: Colors.blue,
-                child: Text('Chart'),
-                elevation: 5,
-              ),
-            ),
+            Chart(_recentTransactions,),
             TransactionList(_userTransactions),
           ],
         ),
