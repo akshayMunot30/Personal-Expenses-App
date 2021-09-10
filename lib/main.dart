@@ -36,9 +36,11 @@ class MyApp extends StatelessWidget {
           textTheme: GoogleFonts.quicksandTextTheme(
             Theme.of(context).textTheme.copyWith(
                   headline6: GoogleFonts.openSans(
-                      textStyle: Theme.of(context).textTheme.headline6,
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold),
+                    textStyle: Theme.of(context).textTheme.headline6,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
                 ),
           ),
         ),
