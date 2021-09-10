@@ -22,9 +22,13 @@ class MyApp extends StatelessWidget {
         textTheme: GoogleFonts.quicksandTextTheme(
           Theme.of(context).textTheme.copyWith(
                 headline6: GoogleFonts.openSans(
-                    textStyle: Theme.of(context).textTheme.headline6,
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold),
+                  textStyle: Theme.of(context).textTheme.headline6,
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
+                button: TextStyle(
+                  color: Colors.white,
+                ),
               ),
         ),
         appBarTheme: AppBarTheme(
@@ -77,12 +81,13 @@ class _MyHomePageState extends State<MyHomePage> {
     }).toList();
   }
 
-  void _addNewTransaction(String txTitle, double txAmount) {
+  void _addNewTransaction(
+      String txTitle, double txAmount, DateTime chosenDate) {
     final newTx = Transaction(
       id: DateTime.now().toString(),
       title: txTitle,
       amount: txAmount,
-      date: DateTime.now(),
+      date: chosenDate,
     );
 
     setState(() {
@@ -118,7 +123,9 @@ class _MyHomePageState extends State<MyHomePage> {
           // mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Chart(_recentTransactions,),
+            Chart(
+              _recentTransactions,
+            ),
             TransactionList(_userTransactions),
           ],
         ),
