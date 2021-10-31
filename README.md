@@ -7,7 +7,7 @@ I will also be adding a delete option using Icon widget to delete a particular r
 
 ## UI of the Application
 
-1. Initial State
+**1. Initial State**
 
 <p float="left">
   <img src="assets/images/potrait_emptylist.jpg" width="200" height="400" /> </t>
@@ -16,7 +16,7 @@ I will also be adding a delete option using Icon widget to delete a particular r
 
 <br>
 
-2. Expenses List
+**2. Expenses List**
 <br>
 
 * Potrait:
