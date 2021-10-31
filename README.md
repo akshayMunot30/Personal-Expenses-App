@@ -30,7 +30,7 @@ I will also be adding a delete option using Icon widget to delete a particular r
 
 <br>
 <p float="left">
-<img src="assets/images/landscape_list.jpg" width="400" height="200" /><br>
+<img src="assets/images/landscape_list.jpg" width="400" height="200" />
 <img src="assets/images/landscape_chart.jpg" width="400" height="200" />
 </p>
 
