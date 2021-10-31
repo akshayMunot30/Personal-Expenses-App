@@ -10,7 +10,7 @@ I will also be adding a delete option using Icon widget to delete a particular r
 1. Initial State
 
 &nbsp; <p float="left">
-  <img src="assets/images/potrait_emptylist.jpg" width="300" height="600" />
-  <img src="assets/images/landscape_emptylist.jpg" width="600" height="300" />
+  <img src="assets/images/potrait_emptylist.jpg" width="200" height="400" />
+  <img src="assets/images/landscape_emptylist.jpg" width="400" height="200" />
 </p>
 
