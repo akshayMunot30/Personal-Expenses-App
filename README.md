@@ -19,18 +19,18 @@ I will also be adding a delete option using Icon widget to delete a particular r
 2. Expenses List
 <br>
 
-    * Potrait:
+* Potrait:
 
-    <br>
-    <p float="left">
-    <img src="assets/images/potrait_list_chart.jpg" width="200" height="400" />
-    </p>
+<br>
+<p float="left">
+<img src="assets/images/potrait_list_chart.jpg" width="200" height="400" />
+</p>
 
-    * Landscape:
+* Landscape:
 
-    <br>
-    <p float="left">
-    <img src="assets/images/landscape_list.jpg" width="400" height="200" />
-    <img src="assets/images/landscape_chart.jpg" width="400" height="200" />
-    </p>
+<br>
+<p float="left">
+<img src="assets/images/landscape_list.jpg" width="400" height="200" />
+<img src="assets/images/landscape_chart.jpg" width="400" height="200" />
+</p>
 
