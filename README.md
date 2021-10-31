@@ -9,8 +9,28 @@ I will also be adding a delete option using Icon widget to delete a particular r
 
 1. Initial State
 
-&nbsp; <p float="left">
-  <img src="assets/images/potrait_emptylist.jpg" width="200" height="400" />
+<p float="left">
+  <img src="assets/images/potrait_emptylist.jpg" width="200" height="400" /> </t>
   <img src="assets/images/landscape_emptylist.jpg" width="400" height="200" />
 </p>
+
+<br>
+
+2. Expenses List
+<br>
+
+    * Potrait:
+
+    <br>
+    <p float="left">
+    <img src="assets/images/potrait_list_chart.jpg" width="200" height="400" />
+    </p>
+
+    * Landscape:
+
+    <br>
+    <p float="left">
+    <img src="assets/images/landscape_list.jpg" width="400" height="200" />
+    <img src="assets/images/landscape_chart.jpg" width="400" height="200" />
+    </p>
 
